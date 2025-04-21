@@ -1,6 +1,5 @@
-import { test, expect, Page } from '@playwright/test';
+import { test, expect} from '@playwright/test';
 import { goToHome } from '../utils/navigate';
-import { log } from 'console';
 
 
 test.describe("Funcionalidad: Home", () => {
