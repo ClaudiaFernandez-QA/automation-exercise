@@ -33,14 +33,15 @@ El enfoque está puesto en la calidad, buenas prácticas y simulación de casos 
   - Confirmación con mensaje de suscripción exitosa
 
 ### 🔹 Products
--✅ Navegación desde Home
--✅ Visualización general de productos
--✅ Validación de estructura del producto (imagen, título, precio, botón)
--✅ Búsqueda de productos por nombre
--✅ Visualización del detalle del producto
--✅ Campo cantidad (valor por defecto, tipo y mínimo)
--✅ Modal de confirmación al agregar al carrito
--✅ Cierre correcto del modal con el botón "Continue Shopping"
+- ✅ Navegación desde Home
+- ✅ Visualización general de productos
+- ✅ Validación de estructura del producto (imagen, título, precio, botón)
+- ✅ Búsqueda de productos por nombre
+- ✅ Visualización del detalle del producto
+- ✅ Campo cantidad (valor por defecto, tipo y mínimo)
+- ✅ Modal de confirmación al agregar al carrito
+- ✅ Cierre correcto del modal con el botón "Continue Shopping"
+
 ---
 
 ## ⚙️ Tecnologías y herramientas
