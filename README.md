@@ -8,6 +8,12 @@ El enfoque está puesto en la calidad, buenas prácticas y simulación de casos 
 
 ## 🎯 Funcionalidades cubiertas
 
+### 🔹 Login
+- ✅ Visualización del link desde Home
+- ✅ Redirección al formulario
+- ✅ Visualización de campos
+- ✅ Validación con credenciales inválidas
+
 ### 🔹 Home
 - ✅ Validación del header de navegación
 - ✅ Validación del carrusel (contenido y navegación entre slides)
@@ -26,12 +32,15 @@ El enfoque está puesto en la calidad, buenas prácticas y simulación de casos 
   - Ingreso de email y envío del formulario
   - Confirmación con mensaje de suscripción exitosa
 
-### 🔹 Login
-- ✅ Visualización del link desde Home
-- ✅ Redirección al formulario
-- ✅ Visualización de campos
-- ✅ Validación con credenciales inválidas
-
+### 🔹 Products
+✅ Navegación desde Home
+✅ Visualización general de productos
+✅ Validación de estructura del producto (imagen, título, precio, botón)
+✅ Búsqueda de productos por nombre
+✅ Visualización del detalle del producto
+✅ Campo cantidad (valor por defecto, tipo y mínimo)
+✅ Modal de confirmación al agregar al carrito
+✅ Cierre correcto del modal con el botón "Continue Shopping"
 ---
 
 ## ⚙️ Tecnologías y herramientas
