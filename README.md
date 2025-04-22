@@ -1,8 +1,7 @@
 # 🧪 Automatización UI con Playwright – Automation Exercise
 
-Este proyecto fue desarrollado como ejercicio práctico para reforzar conocimientos en automatización UI utilizando Playwright, sobre el sitio Automation Exercise.
-
-El enfoque está puesto en la calidad, buenas prácticas y simulación de casos reales de testing funcional.
+Este proyecto está en desarrollo y fue creado como ejercicio práctico para reforzar conocimientos en automatización UI utilizando Playwright, sobre el sitio Automation Exercise.
+Tiene como objetivo aplicar buenas prácticas de testing, validar funcionalidades clave de forma progresiva y organizar los casos por flujo funcional.
 
 ---
 
