@@ -1,15 +1,17 @@
 import { test, expect } from '@playwright/test';
-import { goToHome } from '../utils/navigate';
+import { goToContactUs, goToHome } from '../utils/navigate';
 import path from 'path';
 
 
 test.describe("Funcionalidad: Contact Us ", () => {
 
+    test.beforeEach(async ({ page }) => {
+        await goToContactUs(page);
+    });
+
     test('Acceder al formulario de Contact Us y validar estructura', async ({ page }) => {
-        await goToHome(page);
 
         await test.step('Navegar desde el header hacia Contact us', async () => {
-            await page.getByRole('link', { name: 'Contact us' }).click();
             await expect(page).toHaveURL(/contact_us/);
             await expect(page.getByRole('heading', { name: 'Get In Touch' })).toBeVisible();
             await expect(page.getByRole('heading', { name: 'Contact Us' })).toBeVisible();
@@ -27,10 +29,8 @@ test.describe("Funcionalidad: Contact Us ", () => {
     });
 
     test('Completar y enviar formulario de Contact Us con archivo adjunto', async ({ page }) => {
-        await goToHome(page);
 
         await test.step('Acceder a Contact us', async () => {
-            await page.getByRole('link', { name: 'Contact us' }).click();
             await expect(page).toHaveURL(/contact_us/);
         });
 
@@ -64,9 +64,6 @@ test.describe("Funcionalidad: Contact Us ", () => {
     });
 
     test('No permite enviar el formulario si el campo Email está vacío', async ({ page }) => {
-
-        await goToHome(page);
-        await page.getByRole('link', { name: 'Contact us' }).click();
 
         await test.step('Completar campos sin incluir el email', async () => {
             await page.getByRole('textbox', { name: 'Name' }).fill('Test sin email');
