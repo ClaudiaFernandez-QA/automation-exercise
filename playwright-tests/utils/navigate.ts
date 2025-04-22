@@ -5,7 +5,6 @@ export async function goToHome(page: Page) {
   await expect(page).toHaveTitle("Automation Exercise"); 
 }
 
-
 export const goToProducts = async (page: Page) => {
   await goToHome(page);
   await page.getByRole('link', { name: ' Products' }).click();
@@ -19,4 +18,9 @@ await page.getByRole('link', { name: ' Cart' }).click();
 export const goToContactUs = async (page: Page) => {
 await goToHome(page);
 await page.getByRole('link', { name: 'Contact us' }).click();
+};
+
+export const goToLogin = async (page: Page) => {
+await goToHome(page);
+await page.getByRole('link', { name: 'Signup / Login' }).click();
 };

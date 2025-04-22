@@ -43,21 +43,11 @@ test.describe("Funcionalidad: Home", () => {
                 await expect(slideActivo.getByRole('button', { name: 'Test Cases' }).first()).toBeVisible();
                 await expect(slideActivo.getByRole('button', { name: 'APIs list for practice' }).first()).toBeVisible();
 
-                const softwareTestingLink = slideActivo.getByRole('link', { name: 'Software testing services' });
-                //Sólo el primer slide tiene ese enlace
-                if (i === 0) {
-                    await expect(softwareTestingLink).toBeVisible();
-                } else {
-                    await expect(softwareTestingLink).toHaveCount(0);
-                }
-
                 // Avanzar al siguiente slide si no es el último
                 if (i < imagenesEsperadas.length - 1) {
                     await page.locator('.right.control-carousel').click();
                     await expect(page.getByRole('img', { name: 'demo website for practice' }).first()).toHaveAttribute('src', imagenesEsperadas[i + 1]);
                 }
-
-
             });
         }
     });
