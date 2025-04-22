@@ -49,6 +49,13 @@ Tiene como objetivo aplicar buenas prácticas de testing, validar funcionalidade
 - ✅ Validación de comportamiento con campo obligatorio vacío
 - ✅ Manejo de diálogo emergente
 
+### 🔹 Login / Logout / Delete Account
+- ✅ Registro exitoso de nuevo usuario
+- ✅ Login con credenciales válidas
+- ✅ Logout del usuario autenticado
+- ✅ Eliminación de cuenta 
+- ✅ Intento de login con cuenta eliminada 
+
 ---
 
 ## ⚙️ Tecnologías y herramientas
