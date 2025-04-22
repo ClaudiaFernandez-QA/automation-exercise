@@ -11,3 +11,7 @@ export const goToProducts = async (page: Page) => {
   await page.getByRole('link', { name: ' Products' }).click();
 };
 
+export const goToCart = async (page: Page) => {
+await goToHome(page);
+await page.getByRole('link', { name: ' Cart' }).click();
+};
