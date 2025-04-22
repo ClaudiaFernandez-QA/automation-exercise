@@ -42,6 +42,13 @@ El enfoque está puesto en la calidad, buenas prácticas y simulación de casos 
 - ✅ Modal de confirmación al agregar al carrito
 - ✅ Cierre correcto del modal con el botón "Continue Shopping"
 
+### 🔹 Contact Us
+- ✅ Navegación desde el header
+- ✅ Visualización del formulario y campos requeridos
+- ✅ Envío exitoso con archivo adjunto
+- ✅ Validación de comportamiento con campo obligatorio vacío
+- ✅ Manejo de diálogo emergente
+
 ---
 
 ## ⚙️ Tecnologías y herramientas
