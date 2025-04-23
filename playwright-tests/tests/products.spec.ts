@@ -26,7 +26,6 @@ test.describe("Funcionalidad: Products ", () => {
         console.log(cantidad);
 
         expect(cantidad).toBeGreaterThan(0);
-
     });
 
 
@@ -39,7 +38,6 @@ test.describe("Funcionalidad: Products ", () => {
         await expect(producto.locator('.add-to-cart').first()).toBeVisible();
         await expect(producto.locator(' .choose > .nav > li > a').first()).toBeVisible();
     });
-
 
     test('Buscar productos existentes muestra resultados esperados', async ({ page }) => {
         const products = ['jeans', 'dress'];

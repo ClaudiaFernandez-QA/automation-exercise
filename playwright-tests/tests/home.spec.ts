@@ -1,4 +1,4 @@
-import { test, expect} from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { goToHome } from '../utils/navigate';
 
 
@@ -97,128 +97,19 @@ test.describe("Funcionalidad: Home", () => {
 
     });
 
+    //Validación visual del Sidebar
+    // Las validaciones funcionales del sidebar se encuentran en `sidebar.spec.ts`
 
-
-    //Validaciones para la Funcionalidad Siderbar: Category
-
-    test('Se muestra el título de Category', async ({ page }) => {
+    test('Se visualiza correctamente el sidebar de categorías y marcas', async ({ page }) => {
         await expect(page.getByRole('heading', { name: 'Category' })).toBeVisible();
-    });
-
-    test('Se muestran cada una de las categorias', async ({ page }) => {
-        const categories = page.locator('.category-products');
-        await expect.soft(categories.getByRole('link', { name: ' Women' }), "Falta link Women").toBeVisible();
-        await expect.soft(categories.getByRole('link', { name: ' Men' }), "Falta link Men").toBeVisible();
-        await expect.soft(categories.getByRole('link', { name: ' Kids' }), "Falta link Kids").toBeVisible();
-    })
-
-    test('Se muestra cada producto dentro de la categoría Women', async ({ page }) => {
-        const linkWomen = page.getByRole('link', { name: ' Women' });
-        await linkWomen.click();
-
-        const subCategories = page.locator('#Women ul');
-
-        await expect(subCategories.getByRole('link', { name: 'Dress' })).toBeVisible();
-        await expect(subCategories.getByRole('link', { name: 'Tops' })).toBeVisible();
-        await expect(subCategories.getByRole('link', { name: 'Saree' })).toBeVisible();
-
-        await linkWomen.click();
-    });
-
-    test('Se muestra cada producto dentro de la categoría Men', async ({ page }) => {
-        const linkMen = page.getByRole('link', { name: ' Men' });
-        await linkMen.click();
-
-        const subCategories = page.locator('#Men ul');
-
-        await expect(subCategories.getByRole('link', { name: 'Tshirts' })).toBeVisible();
-        await expect(subCategories.getByRole('link', { name: 'Jeans' })).toBeVisible();
-
-        await linkMen.click();
-    });
-
-    test('Se muestra cada producto dentro de la categoría Kids', async ({ page }) => {
-        const linkKids = page.getByRole('link', { name: ' Kids' });
-        await linkKids.click();
-
-        const subCategories = page.locator('#Kids ul');
-
-        await expect(subCategories.getByRole('link', { name: 'Dress' })).toBeVisible();
-        await expect(subCategories.getByRole('link', { name: 'Tops & Shirts' })).toBeVisible();
-
-        await linkKids.click();
-    });
-
-    test('Redirige correctamente a la subcategoría "Tops"', async ({ page }) => {
-        const linkWomen = page.getByRole('link', { name: ' Women' });
-        await linkWomen.click();
-
-        const subCategories = page.locator('#Women ul');
-        await subCategories.getByRole('link', { name: 'Tops' }).click();
-
-        await expect(page).toHaveTitle('Automation Exercise - Tops Products');
-        await expect(page.getByRole('heading', { name: 'Women - Tops Products' })).toBeVisible();
-    });
-
-    test('Solo se muestra una categoría expandida a la vez', async ({ page }) => {
-        const linkMen = page.getByRole('link', { name: ' Men' });
-        const linkKids = page.getByRole('link', { name: ' Kids' });
-
-
-        await linkMen.click();
-        const panelMen = page.locator('#Men');
-        await expect(panelMen).toHaveClass(/in/); // clase "in" indica que está expandido
-
-
-        await linkKids.click();
-        const panelKids = page.locator('#Kids');
-
-        await expect(panelKids).toHaveClass(/in/);
-        await expect(panelMen).not.toHaveClass(/in/);
-    });
-
-
-    //Validaciones para la Funcionalidad Siderbar: Brands
-
-    test('Se muestra el título de Brands', async ({ page }) => {
         await expect(page.getByRole('heading', { name: 'Brands' })).toBeVisible();
     });
 
-    test('Todas las marcas de muestran correctamente', async ({ page }) => {
-
-        const allBrands = ['H&M', 'Polo', 'Madame', 'Mast & Harbour', 'Babyhug', 'Allen Solly Junior', 'Kookie Kids', 'Biba'];
-
-        const brandsContainer = page.locator('.brands-name');
-
-        for (const brand of allBrands) {
-            await expect.soft(brandsContainer.getByRole('link', { name: new RegExp(brand, 'i') }),
-                `Falta la marca ${brand}`).toBeVisible();
-        }
-    });
-
-    test('Redirige correctamente a los productos de la marca seleccionada', async ({ page }) => {
-        const marcas = ['Polo', 'H&M'];
-
-        for (const marca of marcas) {
-            await test.step(`Redirige correctamente por la marca seleccionada: ${marca}`, async () => {
-                const linkMarca = page.getByRole('link', { name: new RegExp(marca, 'i') });
-                await linkMarca.click();
-
-                await expect(page).toHaveURL(new RegExp(`https://www.automationexercise.com/brand_products/${marca}`, 'i'));
-
-                await expect(
-                    page.getByRole('heading', { name: `Brand - ${marca} Products` })
-                ).toBeVisible();
-
-                await page.getByRole('link', { name: 'Home' }).click();
-            });
-        }
-    });
 
     //Validaciones Funcionalidad: Recommended Items
 
     test('La sección "Recommended Items" muestra productos con su estructura completa', async ({ page }) => {
-        const recommendedSection = page.locator('#recommended-item-carousel');
+        const recommendedSection = page.locator('#recommended-item-carousel .item.active');
 
         await test.step('Se visualiza el título "RECOMMENDED ITEMS"', async () => {
             await expect(page.getByRole('heading', { name: 'recommended items' })).toBeVisible();
@@ -269,21 +160,21 @@ test.describe("Funcionalidad: Home", () => {
 
     test('Sección Footer: permite suscribirse correctamente', async ({ page }) => {
         await test.step('Validar visualización del título "Subscription" y campo de email', async () => {
-          await expect(page.getByRole('heading', { name: 'Subscription' })).toBeVisible();
-          await expect(page.getByText('Get the most recent updates from our site and be updated your self...')).toBeVisible();
-          await expect(page.getByPlaceholder('Your email address')).toBeVisible();
+            await expect(page.getByRole('heading', { name: 'Subscription' })).toBeVisible();
+            await expect(page.getByText('Get the most recent updates from our site and be updated your self...')).toBeVisible();
+            await expect(page.getByPlaceholder('Your email address')).toBeVisible();
         });
-      
+
         await test.step('Completar email y enviar formulario', async () => {
-          await page.getByPlaceholder('Your email address').fill('clau.tester@example.com');
-          await page.getByRole('button', { name: '' }).click();
+            await page.getByPlaceholder('Your email address').fill('clau.tester@example.com');
+            await page.getByRole('button', { name: '' }).click();
         });
-      
+
         await test.step('Validar mensaje de éxito', async () => {
-          await expect(page.getByText('You have been successfully subscribed!')).toBeVisible();
+            await expect(page.getByText('You have been successfully subscribed!')).toBeVisible();
         });
-      });
-      
+    });
+
 
 
 });
