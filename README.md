@@ -48,6 +48,26 @@ Tiene como objetivo aplicar buenas prácticas de testing, validar funcionalidade
 - ✅ Modal de confirmación al agregar al carrito
 - ✅ Cierre correcto del modal con el botón "Continue Shopping"
 
+### 🔹 Cart
+- ✅ Navegación desde Home hasta Cart
+- ✅ Visualización del mensaje "Cart is empty" cuando no hay productos
+- ✅ Redirección desde Cart a Products con el link "here"
+- ✅ Agregar un producto y validar contenido del carrito
+  - Cantidad, precio unitario y total
+  - Modal de confirmación
+- ✅ Visualización del botón "Proceed to Checkout"
+- ✅ Eliminar un producto del carrito y validar mensaje de vacío
+
+
+### 🔹 Place Order
+- ✅ Acceso desde el checkout
+- ✅ Visualización de datos ingresados en el formulario de registro
+- ✅ Ingreso de mensaje adicional
+- ✅ Ingreso y validación de datos de tarjeta
+- ✅ Confirmación del pedido con mensaje "Order Placed!"
+- ✅ Descarga del archivo de factura
+- ✅ Redirección al Home al finalizar
+
 ### 🔹 Contact Us
 - ✅ Navegación desde el header
 - ✅ Visualización del formulario y campos requeridos
