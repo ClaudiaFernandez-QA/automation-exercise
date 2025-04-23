@@ -21,9 +21,7 @@ Tiene como objetivo aplicar buenas prácticas de testing, validar funcionalidade
   - Estructura de cards: imagen, título, precio y botones
   - Validación de overlay al hacer hover sobre el producto
 - ✅ Sidebar: categorías y marcas
-  - Validación de texto, despliegue y navegación
-  - Validación de comportamiento tipo acordeón
-  - Redirección al hacer clic en subcategorías o marcas
+  - Validación de texto
 - ✅ Recommended Items
   - Validación de título y productos visibles
   - Navegación entre slides con verificación dinámica
@@ -31,6 +29,14 @@ Tiene como objetivo aplicar buenas prácticas de testing, validar funcionalidade
   - Visualización de la sección "Subscription"
   - Ingreso de email y envío del formulario
   - Confirmación con mensaje de suscripción exitosa
+
+### 🔹 Sidebar (Categorías y Marcas)
+- ✅ Visualización de secciones "Category" y "Brands"
+- ✅ Validación del comportamiento tipo acordeón en categorías
+- ✅ Redirección correcta al hacer clic en subcategorías
+- ✅ Redirección correcta al hacer clic en marcas
+- ✅ Validación dinámica de productos listados por subcategoría
+- ✅ Validación dinámica de productos listados por marca
 
 ### 🔹 Products
 - ✅ Navegación desde Home
