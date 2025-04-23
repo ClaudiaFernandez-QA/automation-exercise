@@ -62,6 +62,7 @@ Tiene como objetivo aplicar buenas prácticas de testing, validar funcionalidade
 - ✅ Eliminación de cuenta 
 - ✅ Intento de login con cuenta eliminada 
 
+---
 
 ## 🔄 Flujos E2E automatizados
 
