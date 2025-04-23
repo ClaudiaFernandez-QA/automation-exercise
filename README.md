@@ -86,7 +86,7 @@ Tiene como objetivo aplicar buenas prácticas de testing, validar funcionalidade
 
 ## 🔄 Flujos E2E automatizados
 
-### 🔹 Registro de usuario + Agregar al carrito + Checkout
+### 🔸 Registro de usuario + Agregar al carrito + Checkout
 
 - ✅ Registro de usuario con datos válidos
 - ✅ Agregar producto al carrito desde la pantalla de detalle
@@ -96,6 +96,14 @@ Tiene como objetivo aplicar buenas prácticas de testing, validar funcionalidade
 - ✅ Validación del mensaje de éxito ("Order Placed!")
 - ✅ Descarga de factura (Invoice) y validación del evento de descarga
 
+### 🔸 Login + Ver detalle de producto + Logout
+
+- ✅ Registro de un nuevo usuario (precondición dentro del test)
+- ✅ Logout tras la creación de cuenta
+- ✅ Login con credenciales recién creadas
+- ✅ Visualización del detalle de un producto desde el listado
+- ✅ Validación del nombre, precio y categoría del producto
+- ✅ Logout exitoso y redirección al formulario de login
 
 ---
 
