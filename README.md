@@ -62,6 +62,20 @@ Tiene como objetivo aplicar buenas prácticas de testing, validar funcionalidade
 - ✅ Eliminación de cuenta 
 - ✅ Intento de login con cuenta eliminada 
 
+
+## 🔄 Flujos E2E automatizados
+
+### 🔹 Registro de usuario + Agregar al carrito + Checkout
+
+- ✅ Registro de usuario con datos válidos
+- ✅ Agregar producto al carrito desde la pantalla de detalle
+- ✅ Navegación hacia el carrito y validación de contenido
+- ✅ Proceso de checkout (con validación de datos de envío)
+- ✅ Ingreso de datos de tarjeta y colocación del pedido
+- ✅ Validación del mensaje de éxito ("Order Placed!")
+- ✅ Descarga de factura (Invoice) y validación del evento de descarga
+
+
 ---
 
 ## ⚙️ Tecnologías y herramientas
