@@ -105,6 +105,16 @@ Tiene como objetivo aplicar buenas prácticas de testing, validar funcionalidade
 - ✅ Validación del nombre, precio y categoría del producto
 - ✅ Logout exitoso y redirección al formulario de login
 
+
+### 🔸 Buscar producto + Agregar al carrito + Checkout
+-✅ Registro de nuevo usuario
+-✅ Búsqueda de un producto por nombre
+-✅ Visualización de resultados y selección de un producto
+-✅ Agregado al carrito desde el detalle
+-✅ Checkout completo con mensaje personalizado
+-✅ Ingreso de datos de tarjeta y confirmación de la orden
+-✅ Validación del mensaje final: Order Placed!
+
 ---
 
 ## ⚙️ Tecnologías y herramientas
