@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { goToCart, goToHome, goToProducts } from "../utils/navigate";
+import { goToCart, goToProducts } from "../utils/navigate";
 
 
 
