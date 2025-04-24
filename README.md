@@ -105,7 +105,6 @@ Tiene como objetivo aplicar buenas prácticas de testing, validar funcionalidade
 - ✅ Validación del nombre, precio y categoría del producto
 - ✅ Logout exitoso y redirección al formulario de login
 
-
 ### 🔸 Buscar producto + Agregar al carrito + Checkout
 - ✅ Registro de nuevo usuario
 - ✅ Búsqueda de un producto por nombre
@@ -114,6 +113,23 @@ Tiene como objetivo aplicar buenas prácticas de testing, validar funcionalidade
 - ✅ Checkout completo con mensaje personalizado
 - ✅ Ingreso de datos de tarjeta y confirmación de la orden
 - ✅ Validación del mensaje final: Order Placed!
+
+### 🔸 Signup + Logout + Login + Delete Account
+- ✅ Registro de nuevo usuario
+- ✅ Logout exitoso tras el registro
+- ✅ Login con las credenciales generadas
+- ✅ Eliminación de cuenta creada
+- ✅ Verificación de error al intentar loguear una cuenta eliminada
+
+### 🔸 Sidebar (Category + Brand) + Add to Cart + Checkout
+- ✅ Precondición: registro de usuario nuevo  
+- ✅ Selección de producto desde categoría  
+- ✅ Selección de producto desde marca  
+- ✅ Agregado de ambos productos al carrito  
+- ✅ Validación visual del modal y navegación  
+- ✅ Checkout con mensaje personalizado  
+- ✅ Pago con tarjeta y confirmación final de orden  
+
 
 ---
 
