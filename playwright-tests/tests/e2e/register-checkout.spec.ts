@@ -17,7 +17,26 @@ test.describe('E2E - Registro + Add to Cart + Checkout', () => {
     await test.step('2 Agregar un producto al carrito', async () => {
       const firstProduct = page.locator('.product-image-wrapper').first();
       await firstProduct.getByRole('link', { name: 'View Product' }).click();
+
       await page.getByRole('button', { name: 'Add to cart' }).click();
+
+      try {
+        const response = await page.waitForResponse(res =>
+          res.url().includes('/add_to_cart'),
+          { timeout: 5000 }
+        );
+
+        expect(response.status(), 'La API de Add to Cart no devolvió status 200').toBe(200);
+
+        const body = await response.text();
+        expect(body, 'El body no contiene el texto "added to cart"').toMatch(/added to cart/i);
+        console.log('Validación API Add to Cart OK');
+
+      } catch (error) {
+        throw new Error('Error: No se recibió o validó correctamente la respuesta de la API /add_to_cart');
+      }
+
+
       await expect(page.locator('#cartModal')).toBeVisible();
       await page.getByRole('link', { name: 'View Cart' }).click();
     });
@@ -31,7 +50,8 @@ test.describe('E2E - Registro + Add to Cart + Checkout', () => {
     });
 
     await test.step('5 Completar pago y finalizar la orden', async () => {
-      await completePayment(page,cardData);
+      await completePayment(page, cardData);
+
     });
 
     await test.step('6 Descargar factura y volver al Home', async () => {
